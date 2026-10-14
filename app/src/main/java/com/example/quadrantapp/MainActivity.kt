@@ -9,14 +9,17 @@ import androidx.compose.foundation.layout.Arrangement
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -52,18 +55,21 @@ fun QuadrantApp(
     paragraph1: String, paragraph2: String, paragraph3: String, paragraph4: String,
     modifier: Modifier = Modifier
 ) {
-    Column(
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = modifier.padding(16.dp)
-    ) {
-        Row {
-            Card(modifier = Modifier.weight(1f).padding(8.dp)) {
-                Column(modifier = Modifier.padding(16.dp)) {
+    Column(modifier = modifier.fillMaxSize()) {
+        Row(modifier = Modifier.weight(1f)) {
+            Card(modifier = Modifier.weight(1f).fillMaxSize(),
+                colors = CardDefaults.cardColors(containerColor = Color(0xFFEADDFF))
+            ) {
+                Column(
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    modifier = Modifier.padding(16.dp).fillMaxSize()
+                ) {
                     Text(
                         text = heading1,
                         fontWeight = FontWeight.Bold,
-                        fontSize = 16.sp
+                        modifier = Modifier.padding(bottom = 16.dp)
+
                     )
                     Text(
                         text = paragraph1,
@@ -72,12 +78,17 @@ fun QuadrantApp(
                 }
             }
 
-            Card(modifier = Modifier.weight(1f).padding(8.dp)) {
-                Column(modifier = Modifier.padding(16.dp)) {
+            Card(modifier = Modifier.weight(1f).fillMaxSize(),
+                colors = CardDefaults.cardColors(containerColor = Color(0xFFD0BCFF))
+            ) {
+                Column(
+                    modifier = Modifier.padding(16.dp).fillMaxSize(),
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally) {
                     Text(
                         text = heading2,
                         fontWeight = FontWeight.Bold,
-                        fontSize = 16.sp
+                        modifier = Modifier.padding(bottom = 16.dp)
                     )
                     Text(
                         text = paragraph2,
@@ -87,13 +98,18 @@ fun QuadrantApp(
             }
         }
 
-        Row {
-            Card(modifier = Modifier.weight(1f).padding(8.dp)) {
-                Column(modifier = Modifier.padding(16.dp)) {
+        Row(modifier = Modifier.weight(1f)) {
+            Card(modifier = Modifier.weight(1f).fillMaxSize(),
+                colors = CardDefaults.cardColors(containerColor = Color(0xFFB69DF8))
+                ) {
+                Column(
+                    modifier = Modifier.padding(16.dp).fillMaxSize(),
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally) {
                     Text(
                         text = heading3,
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 16.sp
+                        modifier = Modifier.padding(bottom = 16.dp),
+                        fontWeight = FontWeight.Bold
                     )
                     Text(
                         text = paragraph3,
@@ -102,12 +118,16 @@ fun QuadrantApp(
                 }
             }
 
-            Card(modifier = Modifier.weight(1f).padding(8.dp)) {
-                Column(modifier = Modifier.padding(16.dp)) {
+            Card(modifier = Modifier.weight(1f).fillMaxSize(),
+                colors = CardDefaults.cardColors(containerColor = Color(0xFFF6EDFF))) {
+                Column(
+                    modifier = Modifier.padding(16.dp).fillMaxSize(),
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally) {
                     Text(
                         text = heading4,
                         fontWeight = FontWeight.Bold,
-                        fontSize = 16.sp
+                        modifier = Modifier.padding(bottom = 16.dp)
                     )
                     Text(
                         text = paragraph4,
